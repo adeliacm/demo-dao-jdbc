@@ -53,8 +53,22 @@ public class SellerDaoJDBC implements SellerDao{
 			st.setInt(1, id);
 			rs = st.executeQuery();
 			if (rs.next()) {
+<<<<<<< HEAD
 				Department dep = instantiateDepartmente(rs);
 				Seller obj = instantiateSelles(rs, dep);
+=======
+				Department dep = new Department();
+				dep.setId(rs.getInt("DepartmentId"));
+				dep.setName(rs.getString("DepName"));
+				
+				Seller obj = new Seller();
+				obj.setId(rs.getInt("Id"));
+				obj.setName(rs.getString("Name"));
+				obj.setEmail(rs.getString("Email"));
+				obj.setBaseSalary(rs.getDouble("BaseSalary"));
+				obj.setBirthDate(rs.getDate("BirthDate"));
+				obj.setDepartment(dep);
+>>>>>>> 7062a852a4b6276ae7e875c0d671192cc913fe8b
 				return obj;
 			}
 			return null;
@@ -68,6 +82,7 @@ public class SellerDaoJDBC implements SellerDao{
 
 	}
 
+<<<<<<< HEAD
 	private Seller instantiateSelles(ResultSet rs, Department dep) throws SQLException {
 		Seller obj = new Seller();
 		obj.setId(rs.getInt("Id"));
@@ -86,6 +101,8 @@ public class SellerDaoJDBC implements SellerDao{
 		return dep;
 	}
 
+=======
+>>>>>>> 7062a852a4b6276ae7e875c0d671192cc913fe8b
 	@Override
 	public List<Seller> findAll() {
 		// TODO Auto-generated method stub

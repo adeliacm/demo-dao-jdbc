@@ -10,11 +10,17 @@ public class Program {
 
 		
 		SellerDao sellerDao = DaoFactory.createSellerDao();
+<<<<<<< HEAD
 		System.out.println("=== Teste1: seller findbyId");
+=======
+>>>>>>> 7062a852a4b6276ae7e875c0d671192cc913fe8b
 		Seller seller = sellerDao.findById(2);
 		
 		System.out.println(seller);
 	}
 
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7062a852a4b6276ae7e875c0d671192cc913fe8b
